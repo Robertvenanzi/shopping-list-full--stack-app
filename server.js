@@ -26,7 +26,7 @@ app.use('/api/items', items);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     app.get('*', (req, res) => {
-        res.sendFiles(path.resolve(_dirname, 'client', 'build', 'index.html'));
+        res.sendFile(path.resolve(_dirname, 'client', 'build', 'index.html'));
     });
 }
 
